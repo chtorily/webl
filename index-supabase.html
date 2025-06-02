@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭佳仑 ❤️ 钱海宁 - 爱的记录</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Supabase JavaScript SDK -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 页眉 -->
+        <header class="header">
+            <h1>郭佳仑 ❤️ 钱海宁</h1>
+            <p class="subtitle">我们的爱情故事 | 从 2023年9月26日 开始</p>
+        </header>
+
+        <!-- 爱情计数器 -->
+        <section class="love-counter">
+            <h2>我们相爱已经</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="counter-number" id="days">0</span>
+                    <span class="counter-label">天</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="hours">0</span>
+                    <span class="counter-label">小时</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="minutes">0</span>
+                    <span class="counter-label">分钟</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="seconds">0</span>
+                    <span class="counter-label">秒</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 时间轴 -->
+        <section class="timeline">
+            <h2>我们的时间轴</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023年9月26日</div>
+                    <div class="timeline-content">
+                        <h3>❤️ 我们开始恋爱</h3>
+                        <p>这是我们爱情故事的开始，一个美好的日子。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">正在进行中</div>
+                    <div class="timeline-content">
+                        <h3>💕 持续的爱情</h3>
+                        <p>每一天都在创造新的美好回忆...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 留言板 -->
+        <section class="message-board">
+            <h2>💌 留言板</h2>
+            <div class="message-form">
+                <select id="messageAuthor" class="author-select">
+                    <option value="">选择作者</option>
+                    <option value="郭佳仑">郭佳仑</option>
+                    <option value="钱海宁">钱海宁</option>
+                </select>
+                <textarea id="messageInput" placeholder="写下你想说的话..."></textarea>
+                <button onclick="addMessage()" class="btn btn-primary">发送留言</button>
+            </div>
+            <div id="messageList" class="message-list">
+                <!-- 动态加载留言 -->
+            </div>
+        </section>
+
+        <!-- 照片墙 -->
+        <section class="photo-gallery">
+            <h2>📸 我们的照片</h2>
+            <div class="photo-upload">
+                <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                <input type="text" id="photoDescription" placeholder="为照片添加描述...">
+                <button onclick="document.getElementById('photoInput').click()" class="btn btn-secondary">选择照片</button>
+                <button onclick="uploadPhoto()" class="btn btn-primary">上传照片</button>
+            </div>
+            <div id="photoGrid" class="photo-grid">
+                <!-- 动态加载照片 -->
+            </div>
+        </section>
+
+        <!-- 美好回忆 -->
+        <section class="memories">
+            <h2>💝 美好回忆</h2>
+            <div class="memory-form">
+                <input type="text" id="memoryTitle" placeholder="回忆标题">
+                <textarea id="memoryContent" placeholder="描述这个美好的回忆..."></textarea>
+                <input type="date" id="memoryDate">
+                <button onclick="addMemory()" class="btn btn-primary">添加回忆</button>
+            </div>
+            <div id="memoryList" class="memory-list">
+                <!-- 动态加载回忆 -->
+            </div>
+        </section>
+
+        <!-- 状态指示器 -->
+        <div id="statusIndicator" class="status-indicator">
+            <span id="statusText">连接中...</span>
+        </div>
+    </div>
+
+    <!-- 加载 JavaScript -->
+    <script src="script-supabase.js"></script>
+</body>
+</html> 
